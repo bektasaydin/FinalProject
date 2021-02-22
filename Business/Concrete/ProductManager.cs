@@ -9,21 +9,16 @@ namespace Business.Concrete
     public class ProductManager : IProductService
     {
         IProductDal _productDal;
-        ICategoryDal _categoryDal;
 
-        public ProductManager(IProductDal productDal,ICategoryDal categoryDal)
+        public ProductManager(IProductDal productDal)
         {
             _productDal = productDal;
-            _categoryDal = categoryDal;
+ 
         }
 
         public List<Product> GetAllByProduct()
         {
             return _productDal.GetAll();
-        }
-        public List<Category> GetAllByCategory()
-        {
-            return _categoryDal.GetAll();
         }
 
         public List<Product> GetAllByCategoryId(int id)
