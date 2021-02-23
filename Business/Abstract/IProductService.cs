@@ -7,11 +7,12 @@ namespace Business.Abstract
 {
     public interface IProductService
     {
-        List<Product> GetAllByProduct();
-        List<Product> GetByUnitPrice(decimal min, decimal max);
-        List<Product> GetAllByCategoryId(int id);
-        List<ProductDetailDto> GetProductDetails();
-        Product GetById(int productId);
+        IDataResult<List<Product>> GetAll();
+        IDataResult<List<Product>> GetAllByProduct();
+        IDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max);
+        IDataResult<List<Product>> GetAllByCategoryId(int id);
+        IDataResult<List<ProductDetailDto>> GetProductDetails();
+        IDataResult<Product> GetById(int productId);
         IResult Add(Product product);
     }
 }
